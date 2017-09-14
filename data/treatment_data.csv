@@ -1,0 +1,9 @@
+OBJECTID *,type_,Treatment_Operational_cost,Treatment_Operational_Energy,Treatment_Operational_GHG,Treatment_Embodied_Energy_y,Treatment_Embodied_GHG_y,Treatment_Capital_Cost
+2,MBR,,,,,,
+3,RO,,,,,,
+4,Coagulation/Flocculation,,,,,,
+5,Activated Sludge,,,,,,
+6,Ultrafiltration,,,,,,
+7,Peroxone,,,,,,
+8,Activated Carbon,,,,,,
+9,0,,,,,,

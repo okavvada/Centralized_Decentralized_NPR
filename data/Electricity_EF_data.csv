@@ -1,0 +1,56 @@
+OBJECTID *,Name,EF_Direct_kg_kWh,EF_Lifecycle_kg_kWh
+1,2010 CA Power Mix,0.325298,0.450372
+2,Alameda Municipal Power,0.099162,0.156506
+3,Anaheim Power,0.69984,0.78943
+4,Azusa Light and Power,0.677337,0.723007
+5,Banning Power,0.516827,0.564569
+6,Bear Valley Electrical Services,0.51418,0.63193
+7,Biggs ,0.238619,0.30748
+8,Burbank,0.60148,0.72199
+9,CalPine,0.44373,0.55105
+10,City of Needles,0.325298,0.450372
+11,City of Riverside,0.536352,0.5883
+12,Commerce Energy,0.403584,0.50408
+13,Constellation NewEnergy,0.50448,0.62235
+14,Corona City,0.3308,0.44111
+15,Eastside Power ,0.28966,0.36702
+16,Ecowatt 100 (80/20),0.0278,0.0738
+17,EcoWatt 20,0.43896,0.55564
+18,Glendale Water and Power,0.489698,0.59633
+19,Gridley (city) Electric ,0.240637,0.309709
+20,Healdsburg City,0.205828,0.269715
+21,Hercules Municipal Utilitu,0,0.024
+22,Imperial Irrigation District,0.509836,0.628258
+23,LADWP,0.505664,0.591758
+24,LADWP Green Power,0.08201,0.15439
+25,Lassen MUD,0.50448,0.62235
+26,Liberty Utility,0.600342,0.752705
+27,Lodi electric,0.316532,0.401706
+28,"Lompoc, City",0.325298,0.450372
+29,MERCED Irrigation District,0.479256,0.592643
+30,Modesto Irrigation District,0.432666,0.534351
+31,Moreno Valley Utility,0.315598,0.440202
+32,Noble,0.261317,0.369792
+33,PacifiCorp,0.315598,0.440202
+34,"Palo Alto, City",0.189764,0.253961
+35,Pasadena W&P,0.627304,0.703715
+36,PG&E,0.202,0.31164
+37,PG&E / MID Expansion,0.195882,0.2828
+38,Pilot Power Group,0.457327,0.570052
+39,Pittsburg (City) Island energy,0.2195,0.3465
+40,Plumas Sierra Rural Electric Coop,0.299682,0.404467
+41,Port of Stockton,0.261932,0.36175
+42,Rancho Cucamonga Municipal Utility,0.50448,0.62235
+43,Redding Electric Utility,0.361261,0.458487
+44,Roseville Electric,0.323665,0.464081
+45,Sacramento Municipal Utility District,0.25674,0.40348
+46,San Diego Gas and Electric,0.351773,0.510612
+47,Shell Energy,0.403584,0.50401
+48,Silicon Valley Power,0.335976,0.428787
+49,Southern California Edison,0.298692,0.413986
+50,Truckee-Donner PUD,0.558108,0.632345
+51,Turlock Irrigation District,0.21022,0.29521
+52,"Ukiah, City",0.15538,0.209912
+53,"Vernon, City",0.413434,0.591533
+54,Victorville Muni US,0.325298,0.450372
+55,SFPUC,0.083,0.083
