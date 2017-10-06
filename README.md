@@ -4,10 +4,11 @@
 This repository consists of the code base for the analysis performed in the publication:
 ```http://pubs.acs.org/doi/abs/10.1021/acs.est.6b02386```
 
-A description of the project can be found at:
+A description of the project can be found at: 
 ```https://okavvada.github.io/San_Francisco_webpage/```
 
 If you wish to use the codebase for your own analysis please provide proper attribution by citing the work:
+
 ```Kavvada, Olga, Arpad Horvath, Jennifer R. Stokes-Draut, Thomas P. Hendrickson, William A. Eisenstein, and Kara L. Nelson. "Assessing Location and Scale of Urban Nonpotable Water Reuse Systems for Life-Cycle Energy Consumption and Greenhouse Gas Emissions." Environmental science & technology 50, no. 24 (2016): 13184-13194.```
 
 
