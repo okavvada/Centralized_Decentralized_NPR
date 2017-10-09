@@ -38,10 +38,13 @@ The algorithmic process estimates the energy intensity and GHG emissions for all
 FInally, the calculated outputs refer to the energy and GHG intensity of each individual component and as a system total. 
 
 ####Pipes
-The piping infrastructure is sized appropriately to be able to serve the defined people as passed in the input argument. One of the nominal piping diameters is chosen from the list: (50, 100, 160, 200, 350, 375, 450). PVC is assumed as piping material and the material mass is calculated based on the chosen diameter according to manufacturing widths. The construction and transportation requirements are estimated for a given lifetime of 50 years. The excavation requirements are also included in the analysis based on the chosen piping diameter for the excavation volume. Piping maintenace is included per meter length of piping and estimated as an annual requirement.
+The piping infrastructure is sized appropriately to be able to serve the defined people as passed in the input argument. One of the nominal piping diameters is chosen from the list: (50, 100, 160, 200, 350, 375, 450). 
+The pipe length is estimated from the number for people served and the given population density, which will estimate the spread of the distribution of people and the amount of area that needs to be covered by piping.
+PVC is assumed as piping material and the material mass is calculated based on the chosen diameter according to manufacturing widths. The construction and transportation requirements are estimated for a given lifetime of 50 years. The excavation requirements are also included in the analysis based on the chosen piping diameter for the excavation volume. Piping maintenace is included per meter length of piping and estimated as an annual requirement.
 
 ####Pumps
-
+For the pumping operational requirements, Bernoulli's equation is used to account for the velocity pressure, the consumption pressure, the elevation head and the headlosses. The piping length is estimated as described previously. The elevation head is calculated besed on the slope index input data for the specific area. From the slope index and the population density the maximum elevation difference can be calculated for a certain number of people served.
+For the pump construction and material transportation, the material requirements are estimated based on the pump size. 
 
 ### Outputs
 
