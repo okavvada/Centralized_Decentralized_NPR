@@ -19,12 +19,43 @@ The core and integral criterion for sustainable water reuse implantation is the 
 
 This project combines spatial analysis and a LCA methodology to develop an algorithm for the estimation of the environmental impacts of decentralized versus centralized non-potable water reuse. Two separate models are developed, one to assess a decentralized reuse scenario in multiple scales and one for the centralized reuse alternative taking into account the existing infrastructure. The models are currently developed for the city of San Francisco.
 
-## Input Data
+##Decentralized model
+
+### Input Data
+For this analysis the area of interest is a grid cell of 500x500 m. Each grid cell should contain aggregate data that characterizes it as described below.
+- people: The number of people that are going to be served by the decentralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
+- grid_ID: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
+- slope_index_grid: This is the average slope index of the area of interest (grid cell). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
+- pop_density: This field contains information on the average population density of the grid cell.
+- status: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
+
+This information would be passed in as arguments to the decentralization model `LCA_assessment_model_decentralized.py`. An example of this process can be found in the `Decentralized_SAN_FRANCISCO_Specific.ipynb`. In this example the decentralized algorithm was run for multiple grid cells so the arguments are being stored in a csv file and passed in one-by-one. 
+
+
+### Algorithmic Process
+The algorithmic process estimates the energy intensity and GHG emissions for all the stages of the decentralized reuse scenario at the appropriate scale. Given the input data, the algorithm sizes and estimates the energy and GHG emissions of each system component, namely the pipes, pumps, storage and treatment as described in the `Object_class.py`. Each system component is being sized appropriately to serve the required population and its construction and operating requirements are quantified. The entire algorithmic process is in the `LCA_assessment_model_decentralized.py` file. 
+
+FInally, the calculated outputs refer to the energy and GHG intensity of each individual component and as a system total. 
+
+####Pipes
+The piping infrastructure is sized appropriately to be able to serve the defined people as passed in the input argument. One of the nominal piping diameters is chosen from the list: (50, 100, 160, 200, 350, 375, 450). PVC is assumed as piping material and the material mass is calculated based on the chosen diameter according to manufacturing widths. The construction and transportation requirements are estimated for a given lifetime of 50 years. The excavation requirements are also included in the analysis based on the chosen piping diameter for the excavation volume. Piping maintenace is included per meter length of piping and estimated as an annual requirement.
+
+####Pumps
+
+
+### Outputs
+
+
+##Centralized model
+
+### Input Data
+The required input data
+
+- length_centralized_m: This value refers to the distance between the grid cell in question and the current location of the 
+- z_max_route: 
+
+### Algorithmic Process
 
 
 
-## Algorithmic Process
-
-
-
-## Outputs
+### Outputs
