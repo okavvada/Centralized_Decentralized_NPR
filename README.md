@@ -19,7 +19,7 @@ The core and integral criterion for sustainable water reuse implantation is the 
 
 This project combines spatial analysis and a LCA methodology to develop an algorithm for the estimation of the environmental impacts of decentralized versus centralized non-potable water reuse. Two separate models are developed, one to assess a decentralized reuse scenario in multiple scales and one for the centralized reuse alternative taking into account the existing infrastructure. The models are currently developed for the city of San Francisco.
 
-##Decentralized model
+## Decentralized model
 
 ### Input Data
 For this analysis the area of interest is a grid cell of 500x500 m. Each grid cell should contain aggregate data that characterizes it as described below.
