@@ -89,7 +89,7 @@ The elevation head for the conveyance from the centralized plant to the grid cel
 The storage tank would be located right after the treatment plant and with a capacity to store three days worth of water. It is modeled as a cylindrical tank made out of cement and with a lifetime of 50 years.
 
 * **Treatment**:
-The treatment train for the decentralized scenario unit involves a series of unit treatments. The treatment train involves a bar screen, a grinder pump, a grit cement chamber, a steel small equalization tank, an MBR unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their material transport, construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
+The treatment train for the centralized scenario unit involves a series of additional unit treatments to the existing secondary treatment plant. The treatment train involves the existing secondary treatment, tertiary treatment, a reverse osmosis unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their material transport, construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
 
 ### Outputs
-The outputs of the decentralized algorithmic module is four arrays of values. The first two arrays describe the individual contributions of each process to energy and GHG emissions. The last two arrays contain the total energy and GHG emissions for the system at the specified scale.
+The outputs of the centralized algorithmic module is four arrays of values. The first two arrays describe the individual contributions of each process to energy and GHG emissions. The last two arrays contain the total energy and GHG emissions for the system at the specified scale.
