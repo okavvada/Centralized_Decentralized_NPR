@@ -53,9 +53,9 @@ The storage tank would be located right after the treatment plant and with a cap
 The treatment train for the decentralized scenario unit involves a series of unit treatments. The treatment train involves a bar screen, a grinder pump, a grit cement chamber, a steel small equalization tank, an MBR unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their material transport, construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
 
 ### Outputs
-The outputs of the decentralized algorithmic module is an array of the individual contributions of each process described above to energy and GHG emissions. The total energy and GHG emissions are also reported
+The outputs of the decentralized algorithmic module is four arrays of values. The first two arrays describe the individual contributions of each process to energy and GHG emissions. The last two arrays contain the total energy and GHG emissions for the system at the specified scale.
 
-##Centralized model
+## Centralized model
 
 ### Input Data
 The required input data
