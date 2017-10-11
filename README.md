@@ -35,7 +35,7 @@ This information would be passed in as arguments to the decentralization model `
 ### Algorithmic Process
 The algorithmic process estimates the energy intensity and GHG emissions for all the stages of the decentralized reuse scenario at the appropriate scale. Given the input data, the algorithm sizes and estimates the energy and GHG emissions of each system component, namely the pipes, pumps, storage and treatment as described in the `Object_class.py`. Each system component is being sized appropriately to serve the required population and its construction and operating requirements are quantified. The entire algorithmic process is in the `LCA_assessment_model_decentralized.py` file. 
 
-FInally, the calculated outputs refer to the energy and GHG intensity of each individual component and as a system total. Below is a description of the assessed system components. The codebase for the assessment is in the `Object_class.py` file.
+FInally, the calculated outputs refer to the energy and GHG intensity of each individual component and as a system total. All components are assessed for their material transport, construction impacts and operational requirements. Below is a description of the assessed system components. The codebase for the assessment is in the `Object_class.py` file.
 
 * **Pipes**: 
 The piping infrastructure is sized appropriately to be able to serve the defined people as passed in the input argument. One of the nominal piping diameters is chosen from the list: (50, 100, 160, 200, 350, 375, 450). 
@@ -50,7 +50,7 @@ For the pump construction and material transportation, the material requirements
 The storage tank would be located right after the treatment plant and with a capacity to store three days worth of water. It is modeled as a cylindrical tank made out of cement and with a lifetime of 50 years.
 
 * **Treatment**:
-The treatment train for the decentralized scenario unit involves a series of unit treatments. The treatment train involves a bar screen, a grinder pump, a grit cement chamber, a steel small equalization tank, an MBR unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
+The treatment train for the decentralized scenario unit involves a series of unit treatments. The treatment train involves a bar screen, a grinder pump, a grit cement chamber, a steel small equalization tank, an MBR unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their material transport, construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
 
 ### Outputs
 The outputs of the decentralized algorithmic module is an array of the individual contributions of each process described above to energy and GHG emissions. The total energy and GHG emissions are also reported
