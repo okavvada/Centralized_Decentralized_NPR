@@ -58,13 +58,37 @@ The outputs of the decentralized algorithmic module is four arrays of values. Th
 ## Centralized model
 
 ### Input Data
-The required input data
+For this analysis each grid cell is supposed to be served by its closest centralized wastewater treatment plant. For each grid cell we account for the in-cell distribution requirements plus the distribution requirements for transporting the water from the centralized treatment plant to the grid cell. The required inputs for each grid cell are shown below.
+- people: The number of people that are going to be served by the centralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
+- grid_ID: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
+- slope_index_grid: This is the average slope index of the area of interest (in-grid cell requirements). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
+- pop_density: This field contains information on the average population density of the grid cell.
+- status: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
+- length_centralized_m: This value refers to the distance between the grid cell in question and the current location of the centralized treatment plant
+- z_max_route: Is the maximum elevation difference that needs to be overcome on the route from the centralized plant to the grid cell.
 
-- length_centralized_m: This value refers to the distance between the grid cell in question and the current location of the 
-- z_max_route: 
+This information would be passed in as arguments to the centralization model `LCA_assessment_model_centralized.py`. An example of this process can be found in the `Centralized_SAN_FRANCISCO_Specific.ipynb`. In this example the centralized algorithm was run for multiple grid cells so the arguments are being stored in a csv file and passed in one-by-one. 
+
 
 ### Algorithmic Process
+The algorithmic process estimates the energy intensity and GHG emissions for all the stages of the decentralized reuse scenario at the appropriate scale. Given the input data, the algorithm sizes and estimates the energy and GHG emissions of each system component, namely the pipes, pumps, storage and treatment as described in the `Object_class.py`. Each system component is being sized appropriately to serve the required population and its construction and operating requirements are quantified. The entire algorithmic process is in the `LCA_assessment_model_decentralized.py` file. 
 
+FInally, the calculated outputs refer to the energy and GHG intensity of each individual component and as a system total. All components are assessed for their material transport, construction impacts and operational requirements. Below is a description of the assessed system components. The codebase for the assessment is in the `Object_class.py` file.
 
+* **Pipes**: 
+The piping infrastructure is sized appropriately to be able to serve the defined people as passed in the input argument. One of the nominal piping diameters is chosen from the list: (50, 100, 160, 200, 350, 375, 450). 
+The pipe length is estimated from the number for people served and the given population density, which will estimate the spread of the distribution of people and the amount of area that needs to be covered by piping.
+PVC is assumed as piping material and the material mass is calculated based on the chosen diameter according to manufacturing widths. The construction and transportation requirements are estimated for a given lifetime of 50 years. The excavation requirements are also included in the analysis based on the chosen piping diameter for the excavation volume. Piping maintenace is included per meter length of piping and estimated as an annual requirement.
+
+* **Pumps**:
+For the pumping operational requirements, Bernoulli's equation is used to account for the velocity pressure, the consumption pressure, the elevation head and the headlosses. The piping length is estimated as described previously. The elevation head is calculated besed on the slope index input data for the specific area. From the slope index and the population density the maximum elevation difference can be calculated for a certain number of people served.
+For the pump construction and material transportation, the material requirements are estimated based on the pump size. 
+
+* **Storage Tanks**:
+The storage tank would be located right after the treatment plant and with a capacity to store three days worth of water. It is modeled as a cylindrical tank made out of cement and with a lifetime of 50 years.
+
+* **Treatment**:
+The treatment train for the decentralized scenario unit involves a series of unit treatments. The treatment train involves a bar screen, a grinder pump, a grit cement chamber, a steel small equalization tank, an MBR unit, a UV disinfection tank and a chlorine contact tank. All unit processes are characterized by their material transport, construction impacts and operational requirements. The sludge is assumed to be transported and disposed off at a landfill.
 
 ### Outputs
+The outputs of the decentralized algorithmic module is four arrays of values. The first two arrays describe the individual contributions of each process to energy and GHG emissions. The last two arrays contain the total energy and GHG emissions for the system at the specified scale.
