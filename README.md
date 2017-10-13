@@ -23,11 +23,11 @@ This project combines spatial analysis and a LCA methodology to develop an algor
 
 ### Input Data
 For this analysis the area of interest is a grid cell of 500x500 m. Each grid cell should contain aggregate data that characterizes it as described below.
-- people: The number of people that are going to be served by the decentralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
-- grid_ID: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
-- slope_index_grid: This is the average slope index of the area of interest (grid cell). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
-- pop_density: This field contains information on the average population density of the grid cell.
-- status: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
+- **people**: The number of people that are going to be served by the decentralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
+- **grid_ID**: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
+- **slope_index_grid**: This is the average slope index of the area of interest (grid cell). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
+- **pop_density**: This field contains information on the average population density of the grid cell.
+- **status**: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
 
 This information would be passed in as arguments to the decentralization model `LCA_assessment_model_decentralized.py`. An example of this process can be found in the `Decentralized_SAN_FRANCISCO_Specific.ipynb`. In this example the decentralized algorithm was run for multiple grid cells so the arguments are being stored in a csv file and passed in one-by-one. 
 
@@ -59,16 +59,16 @@ The outputs of the decentralized algorithmic module is four arrays of values. Th
 
 ### Input Data
 For this analysis each grid cell is supposed to be served by its closest centralized wastewater treatment plant. For each grid cell we account for the in-cell distribution requirements plus the distribution requirements for transporting the water from the centralized treatment plant to the grid cell. The required inputs for each grid cell are shown below.
-- people: The number of people that are going to be served by the centralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
-- grid_ID: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
-- slope_index_grid: This is the average slope index of the area of interest (in-grid cell requirements). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
-- pop_density: This field contains information on the average population density of the grid cell.
-- status: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
-- z_max_route: Is the maximum elevation difference that needs to be overcome on the route from the centralized plant to the grid cell.
-- collection_energy: Is the pumping energy that is required for the wastewater collection (if applicable in units of MJ/m<sup>3</sup>). In San Francisco not all sewers are gravity fed but some pumping might be required depending on the location. This field specifies the energy required for the sewer collection to reach the centralized facility.
-- scenario: Two options are available for this field. 'branched' and 'unbranched'. For the branched scenario the assumption is that there exists piping infrastructure distributed through the entire area and each grid cell is only responsible for the piping infrastructure that it is responsible for. This means that the construction impacts from a main pipe that serves multiple grid cells would be distributed throughout all the grid cells that it serves. The 'unbranched' scenario refers to a case where a designated pipe is constructed that connects each individual cell with the centralized treatment plant.
-- length_centralized_m: This value refers to the distance between the grid cell in question and the current location of the centralized treatment plant for the 'unbranched' scenario (with a designated pipe for each grid cell)
-- length_centralized_const: This value refers to the distance between the grid cell in question and the current location of the centralized treatment plant for the 'branched' scenario (where main pipes are shared between multiple grid cells)
+- **people**: The number of people that are going to be served by the centralized reuse system. This number can be any integer that would be used to estimate the system size and its conveyance requirements.
+- **grid_ID**: The grid id is a uniquely identifiable value used to keep track of the grid cell results for mapping purposes.
+- **slope_index_grid**: This is the average slope index of the area of interest (in-grid cell requirements). It can be calculated as the average slope that can be found inside the boundaries of the grid cell.
+- **pop_density**: This field contains information on the average population density of the grid cell.
+- **status**: This field describes whether the analysis is run for the present time so that the current treatment should be assessed or allows for a 20% efficiency scale if the analysis is done for a future year. The valid arguments for this field are either `current` or `future`. 
+- **z_max_route**: Is the maximum elevation difference that needs to be overcome on the route from the centralized plant to the grid cell.
+- **collection_energy**: Is the pumping energy that is required for the wastewater collection (if applicable in units of MJ/m<sup>3</sup>). In San Francisco not all sewers are gravity fed but some pumping might be required depending on the location. This field specifies the energy required for the sewer collection to reach the centralized facility.
+- **scenario**: Two options are available for this field. 'branched' and 'unbranched'. For the branched scenario the assumption is that there exists piping infrastructure distributed through the entire area and each grid cell is only responsible for the piping infrastructure that it is responsible for. This means that the construction impacts from a main pipe that serves multiple grid cells would be distributed throughout all the grid cells that it serves. The 'unbranched' scenario refers to a case where a designated pipe is constructed that connects each individual cell with the centralized treatment plant.
+- **length_centralized_m**: This value refers to the distance between the grid cell in question and the current location of the centralized treatment plant for the 'unbranched' scenario (with a designated pipe for each grid cell)
+- **length_centralized_const**: This value refers to the distance between the grid cell in question and the current location of the centralized treatment plant for the 'branched' scenario (where main pipes are shared between multiple grid cells)
 
 This information would be passed in as arguments to the centralization model `LCA_assessment_model_centralized.py`. An example of this process can be found in the `Centralized_SAN_FRANCISCO_Specific.ipynb`. In this example the centralized algorithm was run for multiple grid cells so the arguments are being stored in a csv file and passed in one-by-one. 
 
